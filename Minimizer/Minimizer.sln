@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minimizer", "Minimizer.csproj", "{FCE93EEA-7964-4935-A2E5-D493683A492C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCE93EEA-7964-4935-A2E5-D493683A492C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCE93EEA-7964-4935-A2E5-D493683A492C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCE93EEA-7964-4935-A2E5-D493683A492C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCE93EEA-7964-4935-A2E5-D493683A492C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {818883C3-221F-4B23-9D6F-C091FFEF8699}
+	EndGlobalSection
+EndGlobal

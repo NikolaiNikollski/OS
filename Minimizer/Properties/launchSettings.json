@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Minimizer": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\projects\\OS\\Minimizer\\Input\\"
+    }
+  }
+}

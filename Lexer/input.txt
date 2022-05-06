@@ -1,0 +1,25 @@
+﻿using System;
+
+namespace Lexer
+{
+    class Class1
+    {
+        private void bRavno_Click(object sender) // обработчик нажатия на кнопку "равно"
+        {
+            switch (op) // в зависимости от мат. операции производим расчет 
+            {
+                case 1:
+                    g = he"llo!;
+                    c = "hello!;
+                    a = 0.0;
+                    a = 0.;
+                    b = 0x;
+                    c = (0xc + 10);
+                    break;
+                /*case 2:
+                    c = Math.Pow(a, b);
+                    break;*/
+            }
+        }
+    }
+}

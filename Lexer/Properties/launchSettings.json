@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Lexer": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\projects\\OS\\Lexer"
+    }
+  }
+}

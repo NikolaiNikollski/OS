@@ -1,0 +1,3 @@
+L
+S:Sb|Aa|a|b
+A:Aa|Sb|a

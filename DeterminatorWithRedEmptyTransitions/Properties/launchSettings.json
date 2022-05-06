@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Determinator": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\projects\\OS\\DeterminatorWithRedEmptyTransitions\\Input\\"
+    }
+  }
+}

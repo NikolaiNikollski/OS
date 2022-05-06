@@ -1,0 +1,8 @@
+mr
+7
+2
+3
+s1 s2 s3 s4 s5 s6 s7
+y1 y2 y3 y1 y2 y2 y3
+s5 s4 s5 s3 s4 s2 s5
+s7 s1 s4 s2 s1 s3 s4
