@@ -1,5 +1,7 @@
 ﻿
+using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 public class TokenStorage
 {
@@ -18,8 +20,20 @@ public class TokenStorage
             return "NUMBER";
         }
 
+        if (token[0] == '0' && token[1] == 'x')
+        {
+            try
+            {
+                Convert.ToInt32(token, 16);
+                return "HEX NUMBER";
+            }
+            catch
+            {
+                return "ERROR: INVALID HEX NUMBER";
+            }
+        }
 
-        if (token[0] == '"' )
+        if (token[0] == '"')
         {
             if (token[token.Length - 1] == '"')
             {
@@ -31,18 +45,21 @@ public class TokenStorage
             }
         }
 
-        int numeral;
-        if (int.TryParse(token[0].ToString(), out numeral))
+        string identidierPattern = @"^[a-zA-Z]\w*$";
+        Regex rx = new Regex(identidierPattern);
+        if (rx.Match(token).Success)
         {
-            return "ERROR: identidier can`t start with numeral";
+            return "IDENTIFIER";
         }
-
-        return "IDENTIFIER"; 
+        else
+        {
+            return "INVALID IDENTIFIER";
+        }
     }
 
-    public TokenStorage()
-    {
-        Tokens = new Dictionary<string, string>() {
+public TokenStorage()
+{
+    Tokens = new Dictionary<string, string>() {
             {"and", "AND" },
             {"auto", "AUTO" },
             {"bool", "BOOL" },
@@ -125,6 +142,6 @@ public class TokenStorage
             {"<", "SIGN_LESS" },
             {">", "SIGN_MORE" },
         };
-    }
+}
 };
 

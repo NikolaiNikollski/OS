@@ -5,12 +5,12 @@ namespace Lexer
 {
     class Program
     {
-        const string FileNmae = "input.txt";
+        const string FileNmae = "1.txt";
         static TokenStorage TokenStorage = new TokenStorage();
         static void Main(string[] args)
         {
             StreamReader sr = new StreamReader(FileNmae);
-            Console.WriteLine(string.Format("{0, -30}{1, -17}{2, -16}{3, 2}", "Value", "Token", "Line", "Pos"));
+            Console.WriteLine(string.Format("{0, -17}{1, -16}{2, -8}{3, -30}", "Token", "Line", "Pos", "Value"));
 
             bool isBlockComment = false;
             string line;
@@ -42,10 +42,10 @@ namespace Lexer
 
                     if (isString)
                     {
-                        if (ch == '"')
+                        if (ch == '"' && line[i - 1] != '\\')
                         {
                             isString = false;
-                            WriteTokenData(word + '"', stringCounter, i - word.Length - 1);
+                            WriteTokenData(word + '"', stringCounter, i - word.Length);
                             word = "";
                         }
                         else
@@ -65,7 +65,7 @@ namespace Lexer
                                 word = "";
                                 continue;
                             }
-                            if (line[i + 1] == '/')
+                            else if (line[i + 1] == '/')
                             {
                                 isLineComment = true;
                             }
@@ -119,8 +119,13 @@ namespace Lexer
                     }
 
                 }
-                stringCounter++;
 
+                if (isString)
+                {
+                    WriteTokenData(word, stringCounter,line.Length - word.Length);
+                    word = "";
+                }
+                stringCounter++;
             }
             sr.Close();
         }
@@ -134,7 +139,7 @@ namespace Lexer
 
             string data = TokenStorage.GetTokenData(token);
 
-            Console.WriteLine(string.Format("{0, -30}{1, -17}{2, -16}{3, 2}", data, token, line, pos));
+            Console.WriteLine(string.Format("{0, -17}{1, -16}{2, -8}{3, -30}", token, line, pos, data));
         }
     }
 }
